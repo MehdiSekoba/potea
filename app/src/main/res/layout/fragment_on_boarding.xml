@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_create_account"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/onboarding_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:clipToPadding="false"
+        android:overScrollMode="never" />
+
+    <RelativeLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80mdp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/_22mdp">
+
+        <!--indicator-->
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:dotsColor="@color/gray_300"
+            app:dotsCornerRadius="@dimen/_6mdp"
+            app:dotsSize="@dimen/_8mdp"
+            app:dotsSpacing="@dimen/_2mdp"
+            app:dotsWidthFactor="2.5"
+            app:progressMode="true"
+            app:selectedDotColor="@color/UFO_Green" />
+        <!--start-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_start"
+            style="@style/GreenMaterialButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dots_indicator"
+            android:layout_marginHorizontal="@dimen/_14mdp"
+            android:paddingVertical="@dimen/_12mdp"
+            android:layout_marginTop="@dimen/_8mdp"
+            android:textColor="@color/white"
+            tools:text="Start" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

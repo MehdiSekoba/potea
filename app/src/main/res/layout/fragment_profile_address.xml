@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile_address_add.ProfileAddress">
+    <!--shimmer-->
+    <com.skydoves.androidveil.VeilLayout
+        android:id="@+id/shimmer_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="@dimen/_20mdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:veilLayout_radius="@dimen/_6mdp"
+        app:veilLayout_shimmerEnable="true">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/toolbarLay"
+            style="@style/ColoredShadowDark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="@dimen/_8mdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeWidth="0dp"
+            tools:targetApi="p">
+
+            <include
+                android:id="@+id/toolbar"
+                layout="@layout/toolbar_base" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </com.skydoves.androidveil.VeilLayout>
+    <!--recyclerview-->
+    <com.skydoves.androidveil.VeilRecyclerFrameView
+        android:id="@+id/address_List"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8mdp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/_7mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/shimmer_toolbar"
+        app:veilFrame_isItemWrapContentHeight="true"
+        app:veilFrame_isItemWrapContentWidth="true"
+        app:veilFrame_radius="8dp"
+        app:veilFrame_shimmerEnable="true"
+        app:veilFrame_veiled="false" />
+    <!--add address-->
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/add_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_36mdp"
+        android:backgroundTint="@color/UFO_Green"
+        android:contentDescription="@string/app_name"
+        android:text="@string/add_address"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/white"
+        app:borderWidth="0dp"
+        app:extendStrategy="wrap_content"
+        app:icon="@drawable/address"
+        app:iconGravity="start"
+        app:iconTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="@android:color/transparent"
+        app:showMotionSpec="@anim/flash_leave_now" />
+    <!--empty-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emptyLay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shimmer_toolbar">
+
+        <include
+            android:id="@+id/empty_address"
+            layout="@layout/empty" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

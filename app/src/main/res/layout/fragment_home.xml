@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--header shimmer-->
+    <com.skydoves.androidveil.VeilLayout
+        android:id="@+id/veilLayout_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="@dimen/_26mdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:veilLayout_radius="@dimen/_32mdp"
+        app:veilLayout_shimmerEnable="true"
+        app:veilLayout_veiled="false">
+        <!--parent-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="@dimen/_4mdp">
+            <!--avatar-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarImg"
+                android:layout_width="@dimen/_44mdp"
+                android:layout_height="@dimen/_44mdp"
+                android:layout_marginStart="@dimen/_16mdp"
+                android:padding="@dimen/_1mdp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/RoundImageViewProfile"
+                app:strokeColor="@color/gray_200"
+                app:strokeWidth="@dimen/_1mdp"
+                tools:src="@tools:sample/backgrounds/scenic" />
+            <!--Badge-->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarBadgeImg"
+                android:layout_width="@dimen/_8mdp"
+                android:layout_height="@dimen/_8mdp"
+                android:layout_margin="@dimen/_2mdp"
+                android:background="@color/red_400"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="@id/avatarImg"
+                app:layout_constraintTop_toTopOf="@id/avatarImg"
+                app:shapeAppearance="@style/RoundImageViewProfile" />
+            <!--time-->
+            <TextView
+                android:id="@+id/txt_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16mdp"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_200"
+                app:layout_constraintStart_toEndOf="@id/avatarImg"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/app_name" />
+            <!--name family-->
+            <TextView
+                android:id="@+id/txt_name_family"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16mdp"
+                android:layout_marginBottom="@dimen/_4mdp"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="@id/avatarImg"
+                app:layout_constraintStart_toEndOf="@id/avatarImg"
+                tools:text="@string/app_name" />
+
+            <!--notification-->
+            <ImageView
+                android:id="@+id/img_notification"
+                android:layout_width="@dimen/_32mdp"
+                android:layout_height="@dimen/_32mdp"
+                android:layout_marginEnd="@dimen/_62mdp"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_4mdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/notification"
+                app:layout_constraintBottom_toBottomOf="@id/avatarImg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/avatarImg"
+                app:tint="@color/Dark_Grey" />
+            <!--Search-->
+            <ImageView
+                android:id="@+id/searchImg"
+                style="@style/ColoredShadowDark"
+                android:layout_width="@dimen/_32mdp"
+                android:layout_height="@dimen/_32mdp"
+                android:layout_marginStart="@dimen/_10mdp"
+                android:layout_marginEnd="@dimen/_16mdp"
+                android:contentDescription="@string/app_name"
+                android:elevation="@dimen/_15mdp"
+                android:padding="@dimen/_4mdp"
+                android:src="@drawable/search_status"
+                app:layout_constraintBottom_toBottomOf="@id/avatarImg"
+                app:layout_constraintStart_toEndOf="@id/img_notification"
+                app:layout_constraintTop_toTopOf="@id/avatarImg" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.skydoves.androidveil.VeilLayout>
+    <!--content-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_78mdp">
+        <!--scroll-->
+        <com.mehdisekoba.potea.utils.views.SaveLastStateNestedScrollView
+            android:id="@+id/scrollLay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_5mdp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingTop="@dimen/_10mdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--content-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <!--banner-->
+                <com.skydoves.androidveil.VeilRecyclerFrameView
+                    android:id="@+id/banner_List"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_180mdp"
+                    android:layout_marginTop="@dimen/_10mdp"
+                    android:paddingHorizontal="@dimen/_18mdp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:veilFrame_isItemWrapContentHeight="true"
+                    app:veilFrame_isItemWrapContentWidth="true"
+                    app:veilFrame_layout="@layout/shimmer_banner"
+                    app:veilFrame_radius="8dp"
+                    app:veilFrame_shimmerEnable="true"
+                    app:veilFrame_veiled="false" />
+                <!--Discount-->
+                <com.skydoves.androidveil.VeilLayout
+                    android:id="@+id/discount_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_220mdp"
+                    android:layout_marginTop="@dimen/_12mdp"
+                    app:layout_constraintTop_toBottomOf="@id/banner_List"
+                    app:veilLayout_baseAlpha="0.6"
+                    app:veilLayout_baseColor="@color/shimmer"
+                    app:veilLayout_dropOff="0.5"
+                    app:veilLayout_highlightAlpha="1.0"
+                    app:veilLayout_highlightColor="@color/gray_200"
+                    app:veilLayout_radius="@dimen/_18mdp"
+                    app:veilLayout_shimmerEnable="true"
+                    app:veilLayout_veiled="false">
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="@dimen/_8mdp">
+
+                        <com.vipulasri.ticketview.TicketView
+                            android:id="@+id/discountCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:ticketBackgroundColor="@color/Royal_Red"
+                            app:ticketCornerRadius="@dimen/_18mdp"
+                            app:ticketCornerType="rounded"
+                            app:ticketDividerColor="@color/white"
+                            app:ticketDividerDashGap="@dimen/_12mdp"
+                            app:ticketDividerPadding="0dp"
+                            app:ticketDividerType="dash"
+                            app:ticketElevation="@dimen/_6mdp"
+                            app:ticketOrientation="vertical"
+                            app:ticketScallopPositionPercent="30"
+                            app:ticketScallopRadius="@dimen/_10mdp"
+                            app:ticketShowBorder="false"
+                            app:ticketShowDivider="true" />
+
+                        <!--guid line-->
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.33" />
+                        <!--logo discount-->
+                        <ImageView
+                            android:id="@+id/logo_discount"
+                            android:layout_width="@dimen/_40mdp"
+                            android:layout_height="@dimen/_40mdp"
+                            android:layout_marginTop="@dimen/_40mdp"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/discount"
+                            app:layout_constraintEnd_toEndOf="@id/guideline"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:tint="@color/white" />
+                        <!--text discount-->
+                        <TextView
+                            android:id="@+id/txt_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_6mdp"
+                            android:gravity="center_horizontal"
+                            android:lineSpacingExtra="@dimen/_2mdp"
+                            android:maxLines="2"
+                            android:text="@string/amazing_offers"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_18font_mdp"
+                            app:layout_constraintEnd_toEndOf="@id/guideline"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/logo_discount" />
+                        <!--amazing-->
+                        <com.skydoves.androidveil.VeilRecyclerFrameView
+                            android:id="@+id/amazing_List"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_14mdp"
+                            android:layout_marginEnd="@dimen/_2mdp"
+                            android:clipToPadding="false"
+                            android:paddingHorizontal="@dimen/_18mdp"
+                            app:layout_constraintBottom_toBottomOf="@id/discountCard"
+                            app:layout_constraintEnd_toEndOf="@id/discountCard"
+                            app:layout_constraintStart_toStartOf="@id/guideline"
+                            app:layout_constraintTop_toTopOf="@id/discountCard"
+                            app:veilFrame_isItemWrapContentHeight="true"
+                            app:veilFrame_isItemWrapContentWidth="true"
+                            app:veilFrame_layout="@layout/shimmer_banner"
+                            app:veilFrame_radius="8dp"
+                            app:veilFrame_shimmerEnable="true"
+                            app:veilFrame_veiled="false"
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.skydoves.androidveil.VeilLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12mdp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/discount_lay">
+                    <!--new product-->
+                    <ViewStub
+                        android:id="@+id/newProductLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout="@layout/home_new_product" />
+                    <!--popular-->
+                    <ViewStub
+                        android:id="@+id/popularLay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10mdp"
+                        android:layout="@layout/home_popular" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.mehdisekoba.potea.utils.views.SaveLastStateNestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--Title-->
+    <TextView
+        android:id="@+id/ProductsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15mdp"
+        android:gravity="center_vertical"
+        android:text="@string/new_products"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/gray_900"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--Show all-->
+    <TextView
+        android:id="@+id/newProductsShowAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_15mdp"
+        android:drawablePadding="@dimen/_5mdp"
+        android:gravity="center_vertical"
+        android:text="@string/showAll"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/UFO_Green"
+        app:drawableEndCompat="@drawable/arrow_right"
+        app:drawableTint="@color/UFO_Green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ProductsTitle" />
+
+    <com.skydoves.androidveil.VeilRecyclerFrameView
+        android:id="@+id/newProduct_List"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_180mdp"
+        android:layout_marginTop="@dimen/_8mdp"
+        app:layout_constraintTop_toBottomOf="@id/ProductsTitle"
+        app:veilFrame_isItemWrapContentHeight="true"
+        app:veilFrame_isItemWrapContentWidth="true"
+        app:veilFrame_layout="@layout/shimmer_product"
+        app:veilFrame_radius="8dp"
+        app:veilFrame_shimmerEnable="true"
+        app:veilFrame_veiled="false" />
+</androidx.constraintlayout.widget.ConstraintLayout>

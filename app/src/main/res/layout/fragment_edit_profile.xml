@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_top_rounded_white"
+    android:paddingVertical="@dimen/_15mdp">
+    <!--line-->
+    <View
+        android:id="@+id/line"
+        android:layout_width="@dimen/_40mdp"
+        android:layout_height="@dimen/_6mdp"
+        android:background="@drawable/bg_shimmer_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--Close-->
+    <ImageView
+        android:id="@+id/closeImg"
+        android:layout_width="@dimen/_16mdp"
+        android:layout_height="@dimen/_16mdp"
+        android:layout_marginStart="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_1mdp"
+        android:src="@drawable/close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        app:tint="@color/gray_200" />
+    <!--Title-->
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:text="@string/editProfile"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/gray_900"
+        app:layout_constraintBottom_toBottomOf="@+id/closeImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+    <!--Line-->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_15mdp"
+        android:alpha="0.5"
+        android:background="@color/text_color"
+        app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+    <!--Scroll-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollLay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:paddingTop="@dimen/_10mdp"
+        app:layout_constraintEnd_toEndOf="@id/submitBtn"
+        app:layout_constraintStart_toStartOf="@id/submitBtn"
+        app:layout_constraintTop_toBottomOf="@+id/line1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                app:startIconDrawable="@drawable/user"
+                android:layout_marginTop="@dimen/_10mdp"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance_medium"
+                    android:textColor="@color/gray_900" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--Family-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/familyInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/family"
+                app:startIconDrawable="@drawable/user">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/familyEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance_medium"
+                    android:textColor="@color/gray_900" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--phone number-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/phone_number"
+                app:startIconDrawable="@drawable/ic_phone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/TextAppearance_medium"
+                    android:textColor="@color/gray_900"
+                    android:inputType="phone"
+                    android:maxLength="18"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <!--Button-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitBtn"
+        style="@style/GreenMaterialButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_margin="@dimen/_20mdp"
+        android:enabled="false"
+        android:stateListAnimator="@null"
+        android:text="@string/submitProfileInfo"
+        android:textColor="@color/button_text_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollLay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

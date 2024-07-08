@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.search.SearchFragment">
+    <!--search-->
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_14mdp"
+        android:layout_marginTop="@dimen/_32mdp"
+        android:text="@string/searchbar_hint"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/gray_900"
+        app:layout_constraintEnd_toStartOf="@id/img_sort"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--sort-->
+    <ImageView
+        android:id="@+id/img_sort"
+        android:layout_width="@dimen/_26mdp"
+        android:layout_height="@dimen/_26mdp"
+        android:layout_marginEnd="@dimen/_16mdp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        android:src="@drawable/sort"
+        app:layout_constraintBottom_toBottomOf="@id/txt_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_title"
+        app:tint="@color/gray_900" />
+    <!--search-->
+    <com.iammert.library.ui.multisearchviewlib.MultiSearchView
+        android:id="@+id/multiSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4mdp"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"
+        app:searchIcon="@drawable/search_status"
+        app:searchIconColor="@color/UFO_Green"
+        app:searchTextStyle="@style/SearchTextStyle"
+        app:selectedTabStyle="dot" />
+    <!--list-->
+    <com.skydoves.androidveil.VeilRecyclerFrameView
+        android:id="@+id/searchList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8mdp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/_7mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/multiSearchView"
+        app:veilFrame_isItemWrapContentHeight="true"
+        app:veilFrame_isItemWrapContentWidth="true"
+        app:veilFrame_radius="8dp"
+        app:veilFrame_shimmerEnable="true"
+        app:veilFrame_veiled="false" />
+
+    <!--Empty-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emptyLay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/multiSearchView">
+
+        <include
+            android:id="@+id/search_empty"
+            layout="@layout/empty" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

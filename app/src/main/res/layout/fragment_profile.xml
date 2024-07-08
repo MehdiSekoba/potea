@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Water"
+    tools:context=".ui.profile.ProfileFragment">
+    <!--Scroll-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+        <!--toolbar-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_start"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1mdp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_end"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1mdp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.93" />
+            <!--toolbar-->
+            <com.skydoves.androidveil.VeilLayout
+                android:id="@+id/veilLayout_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginTop="@dimen/_18mdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:veilLayout_radius="@dimen/_12mdp"
+                app:veilLayout_shimmerEnable="true"
+                app:veilLayout_veiled="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <!--title-->
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_26mdp"
+                        android:drawablePadding="@dimen/_6mdp"
+                        android:gravity="start|center_vertical"
+                        android:text="@string/profile"
+                        android:textAppearance="@style/TextAppearance_Bold"
+                        android:textColor="@color/gray_900"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!--chat-->
+                    <ImageView
+                        android:layout_width="@dimen/_34mdp"
+                        android:layout_height="@dimen/_34mdp"
+                        android:layout_marginEnd="@dimen/_26mdp"
+                        android:contentDescription="@string/app_name"
+                        android:padding="@dimen/_4mdp"
+                        android:src="@drawable/ic_massage"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/dark_gunmetal" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.skydoves.androidveil.VeilLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_1mdp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.11" />
+            <!--line-->
+            <View
+                android:id="@+id/line_under"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1mdp"
+                android:background="@color/gray_300"
+                app:layout_constraintTop_toBottomOf="@id/guideline_horizontal" />
+            <!--other-->
+            <com.skydoves.androidveil.VeilLayout
+                android:id="@+id/content_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_10mdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line_under"
+                app:veilLayout_radius="@dimen/_16mdp"
+                app:veilLayout_shimmerEnable="true"
+                app:veilLayout_veiled="false">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_22mdp"
+                    android:layout_marginEnd="@dimen/_22mdp">
+                    <!--card profile-->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profile_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8mdp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="@dimen/_10mdp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:strokeWidth="0dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/avatar_user"
+                                android:layout_width="@dimen/_86mdp"
+                                android:layout_height="@dimen/_86mdp"
+                                android:layout_marginTop="@dimen/_10mdp"
+                                android:elevation="@dimen/_1mdp"
+                                android:scaleType="fitXY"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:shapeAppearance="@style/RoundImageViewProfile"
+                                app:strokeColor="@android:color/transparent"
+                                app:strokeWidth="1dp" />
+                            <!--Edit-->
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/avatarEditImg"
+                                android:layout_width="@dimen/_28mdp"
+                                android:layout_height="@dimen/_28mdp"
+                                android:layout_margin="@dimen/_3mdp"
+                                android:background="@drawable/bg_circle_white"
+                                android:elevation="@dimen/_21mdp"
+                                android:outlineAmbientShadowColor="@color/UFO_Green"
+                                android:outlineSpotShadowColor="@color/UFO_Green"
+                                android:padding="@dimen/_1mdp"
+                                android:src="@drawable/pen_circle"
+                                app:layout_constraintBottom_toBottomOf="@id/avatar_user"
+                                app:layout_constraintEnd_toEndOf="@id/avatar_user"
+                                app:shapeAppearance="@style/RoundImageViewProfile"
+                                app:strokeColor="@color/white"
+                                app:strokeWidth="@dimen/_1mdp"
+                                app:tint="@color/UFO_Green"
+                                tools:targetApi="p" />
+                            <!--Name-->
+                            <TextView
+                                android:id="@+id/nameTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_20mdp"
+                                android:layout_marginTop="@dimen/_10mdp"
+                                android:gravity="center"
+                                android:textAppearance="@style/TextAppearance_Bold"
+                                android:textColor="@color/gray_900"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/avatar_user"
+                                tools:text="Mehdi Sekoba" />
+                            <!--email-->
+                            <TextView
+                                android:id="@+id/emailTxt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_18mdp"
+                                android:layout_marginTop="@dimen/_4mdp"
+                                android:drawablePadding="@dimen/_8mdp"
+                                android:gravity="start|center_vertical|center_horizontal"
+                                android:paddingVertical="@dimen/_8mdp"
+                                android:textAppearance="@style/TextAppearance_medium"
+                                android:textColor="@color/gray_900"
+                                app:drawableStartCompat="@drawable/ic_verify"
+                                app:drawableTint="@color/UFO_Green"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/nameTxt"
+                                tools:text="Mehdi Sekoba" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <!--Order-->
+                    <LinearLayout
+                        android:id="@+id/orderContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10mdp"
+                        android:background="@drawable/bg_rounded_white"
+                        android:orientation="vertical"
+                        android:paddingVertical="@dimen/_8mdp"
+                        app:layout_constraintTop_toBottomOf="@id/profile_card">
+
+                        <include
+                            android:id="@+id/orderLay"
+                            layout="@layout/profile_user_order" />
+                    </LinearLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.skydoves.androidveil.VeilLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

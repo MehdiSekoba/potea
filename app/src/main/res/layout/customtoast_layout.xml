@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/success_shape"
+        android:paddingTop="@dimen/_6mdp"
+        android:paddingBottom="@dimen/_6mdp"
+        android:paddingRight="@dimen/_14mdp"
+        android:paddingLeft="@dimen/_14mdp"
+        android:layout_marginTop="@dimen/_20mdp"
+        android:id="@+id/toast_type">
+
+        <ImageView
+            android:layout_width="@dimen/_20mdp"
+            android:layout_height="@dimen/_20mdp"
+            android:id="@+id/toast_icon"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_success"
+            android:contentDescription="@string/app_name"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/toast_text"
+            tools:text="This is Custom Toast."
+            android:textAppearance="@style/TextAppearance_medium"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_6mdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        android:src="@drawable/ic_logo"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:layout_alignEnd="@+id/toast_type"
+        android:contentDescription="@string/app_name"/>
+</RelativeLayout>

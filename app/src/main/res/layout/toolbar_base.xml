@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:background="@color/white">
+    <!--Back-->
+    <ImageView
+        android:id="@+id/toolbarBackImg"
+        android:layout_width="@dimen/_25mdp"
+        android:layout_height="@dimen/_25mdp"
+        android:layout_marginStart="@dimen/_10mdp"
+        android:padding="@dimen/_5mdp"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/Charcoal_Gray"
+        android:contentDescription="@string/app_name"
+        android:rotation="180"/>
+    <!--Title-->
+    <TextView
+        android:id="@+id/toolbarTitleTxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10mdp"
+        android:gravity="center"
+        android:textColor="@color/gray_900"
+        android:textAppearance="@style/TextAppearance_Bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toolbarOptionImg"
+        app:layout_constraintStart_toEndOf="@+id/toolbarBackImg"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--Option-->
+    <ImageView
+        android:id="@+id/toolbarOptionImg"
+        android:layout_width="@dimen/_25mdp"
+        android:layout_height="@dimen/_25mdp"
+        android:layout_marginEnd="@dimen/_10mdp"
+        android:padding="@dimen/_5mdp"
+        android:src="@drawable/filter_square"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/Charcoal_Gray"
+        android:contentDescription="@string/app_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ColoredShadowDark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/_12mdp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="0dp"
+    app:strokeWidth="0dp"
+    app:cardElevation="@dimen/_4mdp"
+    android:layout_marginHorizontal="@dimen/_10mdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--Tab layout-->
+        <com.google.android.material.tabs.TabLayout
+            style="@style/Widget.App.TabLayout"
+            android:id="@+id/detailTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:tabSelectedTextAppearance="@style/TabLayoutFontBold"
+            app:tabTextAppearance="@style/TabLayoutFontNormal"
+            />
+        <!--View pager-->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/detailViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180mdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detailTabLayout" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

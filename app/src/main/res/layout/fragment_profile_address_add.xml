@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <!--Toolbar-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/toolbarLay"
+        style="@style/ColoredShadowDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20mdp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="@dimen/_8mdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp"
+        tools:targetApi="p">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar_base" />
+
+    </com.google.android.material.card.MaterialCardView>
+    <!--Scroll-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollLay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLay"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12mdp">
+
+            <!--Guide-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <!--Title-->
+            <TextView
+                android:id="@+id/recipientTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2mdp"
+                android:text="@string/recipientInfo"
+                android:textAppearance="@style/TextAppearance_Bold"
+                android:textColor="@color/gray_900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--Name-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:layout_marginEnd="@dimen/_2mdp"
+                android:hint="@string/name"
+                app:layout_constraintEnd_toStartOf="@id/guide"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recipientTitle"
+                app:startIconDrawable="@drawable/user"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance_small"
+                    android:textColor="@color/gray_900" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--family-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/familyInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_2mdp"
+                android:hint="@string/family"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/guide"
+                app:layout_constraintTop_toTopOf="@id/nameInpLay"
+                app:startIconDrawable="@drawable/user"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/familyEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="@color/gray_900"
+                    android:textAppearance="@style/TextAppearance_small"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--city-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cityInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/city"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameInpLay"
+                app:startIconDrawable="@drawable/address"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cityEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="@color/gray_900"
+                    android:textAppearance="@style/TextAppearance_small"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--address-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cityInpLay"
+                app:startIconDrawable="@drawable/address"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="@color/gray_900"
+                    android:textAppearance="@style/TextAppearance_small"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--street-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/streetInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/street"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressInpLay"
+                app:startIconDrawable="@drawable/address"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/streetEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:textColor="@color/gray_900"
+                    android:textAppearance="@style/TextAppearance_small"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--Phone-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/streetInpLay"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="18"
+                    android:textColor="@color/gray_900"
+                    android:textAppearance="@style/TextAppearance_small"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--Postal-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/postalInpLay"
+                style="@style/Widget.App.TextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/postalCode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phoneInpLay"
+                app:startIconDrawable="@drawable/ic_postal_code"
+                app:startIconTint="@color/gray_200">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/postalEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress"
+                    android:textColor="@color/gray_900"
+                    android:maxLength="11"
+                    android:textAppearance="@style/TextAppearance_small"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--bottom -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submitBtn"
+                style="@style/GreenMaterialButton"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40mdp"
+                android:enabled="false"
+                android:layout_marginTop="@dimen/_12mdp"
+                android:fillViewport="true"
+                android:stateListAnimator="@null"
+                android:text="@string/submitData"
+                android:textColor="@color/button_text_color"
+                app:layout_constraintTop_toBottomOf="@id/postalInpLay"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                 />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

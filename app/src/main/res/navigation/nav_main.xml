@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.mehdisekoba.potea.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+    <!--Splash action-->
+    <action
+        android:id="@+id/action_splash_to_onboarding"
+        app:destination="@id/onBoardingFragment" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.mehdisekoba.potea.ui.onboarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
+    <!--Login action-->
+    <action
+        android:id="@+id/action_onboarding_to_login"
+        app:destination="@id/nav_login" />
+    <!--login-->
+    <action
+        android:id="@+id/action_register_to_login"
+        app:destination="@id/loginFragment" />
+    <navigation
+        android:id="@+id/nav_login"
+        app:startDestination="@id/registerEmailFragment">
+        <fragment
+            android:id="@+id/registerEmailFragment"
+            android:name="com.mehdisekoba.potea.ui.login.RegisterEmailFragment"
+            android:label="fragment_login_email"
+            tools:layout="@layout/fragment_register_email">
+            <action
+                android:id="@+id/actionEmailToVerify"
+                app:destination="@id/loginVerifyFragment"
+                app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim"
+                app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+                app:popExitAnim="@animator/nav_default_pop_exit_anim" />
+        </fragment>
+        <fragment
+            android:id="@+id/loginVerifyFragment"
+            android:name="com.mehdisekoba.potea.ui.login.LoginVerifyFragment"
+            android:label="fragment_login_verify"
+            tools:layout="@layout/fragment_login_verify">
+            <argument
+                android:name="data"
+                app:argType="com.mehdisekoba.potea.data.model.login.ResponseRegister" />
+        </fragment>
+        <fragment
+            android:id="@+id/forgotPasswordFragment"
+            android:name="com.mehdisekoba.potea.ui.login.ForgotPasswordFragment"
+            android:label="fragment_forgot_password"
+            tools:layout="@layout/fragment_forgot_password" />
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.mehdisekoba.potea.ui.login.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" />
+
+    </navigation>
+    <!--main-->
+    <!--verify ti home-->
+    <action
+        android:id="@+id/action_verify_to_home"
+        app:destination="@id/nav_home"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@animator/nav_default_pop_enter_anim"
+        app:popExitAnim="@animator/nav_default_pop_exit_anim"
+        app:popUpTo="@id/nav_login"
+        app:popUpToInclusive="true" />
+
+    <navigation
+        android:id="@+id/nav_home"
+        app:startDestination="@id/homeFragment">
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.mehdisekoba.potea.ui.home.HomeFragment"
+            android:label="fragment_home"
+            tools:layout="@layout/fragment_home" />
+        <fragment
+            android:id="@+id/cartFragment"
+            android:name="com.mehdisekoba.potea.ui.cart.CartFragment"
+            android:label="fragment_cart"
+            tools:layout="@layout/fragment_cart" />
+        <fragment
+            android:id="@+id/favoriteFragment"
+            android:name="com.mehdisekoba.potea.ui.favorite.FavoriteFragment"
+            android:label="fragment_categories"
+            tools:layout="@layout/fragment_favorite" />
+
+        <!--Profile action-->
+        <action
+            android:id="@+id/actionHomeToProfile"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/actionFavouriteToDetail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.mehdisekoba.potea.ui.profile.ProfileFragment"
+            android:label="fragment_profile"
+            tools:layout="@layout/fragment_profile">
+            <action
+                android:id="@+id/action_profileFragment_self"
+                app:destination="@id/profileFragment" />
+        </fragment>
+        <!--Detail-->
+        <action
+            android:id="@+id/actionToDetail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <!--Edit profile-->
+        <action
+            android:id="@+id/actionToEditProfile"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <!--Profile address-->
+
+        <action
+            android:id="@+id/actionToProfileAddresses"
+            app:destination="@id/profileAddress"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </navigation>
+    <!--Search action-->
+    <action
+        android:id="@+id/actionToSearch"
+        app:destination="@id/searchFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+    <!--Search-->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.mehdisekoba.potea.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/actionSearchToDetail"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.mehdisekoba.potea.ui.detail.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/actionDetailToAddComment"
+            app:destination="@id/addCommentFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/addCommentFragment"
+        android:name="com.mehdisekoba.potea.ui.detail_comments_add.AddCommentFragment"
+        android:label="fragment_add_comment"
+        tools:layout="@layout/fragment_add_comment" />
+    <fragment
+        android:id="@+id/profileAddressAddFragment"
+        android:name="com.mehdisekoba.potea.ui.profile_address_add.ProfileAddressAddFragment"
+        android:label="fragment_profile_address_add"
+        tools:layout="@layout/fragment_profile_address_add" />
+    <dialog
+        android:id="@+id/editProfileFragment"
+        android:name="com.mehdisekoba.potea.ui.profile_edit.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/profileAddress"
+        android:name="com.mehdisekoba.potea.ui.profile_address_add.ProfileAddress"
+        android:label="fragment_profile_address"
+        tools:layout="@layout/fragment_profile_address">
+        <action
+            android:id="@+id/actionToProfileAddAddresses"
+            app:destination="@id/profileAddressAddFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+</navigation>

@@ -1,0 +1,8 @@
+<!-- res/drawable/selected_star_border.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/transparent" />
+    <stroke
+        android:width="@dimen/_1mdp"
+        android:color="@color/UFO_Green" />
+    <corners android:radius="@dimen/_100mdp" />
+</shape>

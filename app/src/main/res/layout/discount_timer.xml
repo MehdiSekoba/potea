@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <!--Day-->
+    <LinearLayout
+        android:id="@+id/dayLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dayTxt"
+            android:layout_width="@dimen/_25mdp"
+            android:layout_height="@dimen/_25mdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_5mdp"
+            android:layout_marginTop="@dimen/_5mdp"
+            android:background="@drawable/bg_circle_cultured"
+            android:backgroundTint="@color/snow"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance_small"
+            android:textColor="@color/gray_900" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/day"
+            android:textAppearance="@style/TextAppearance_small"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+    <!--Hour-->
+    <LinearLayout
+        android:id="@+id/hourLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/hourTxt"
+            android:layout_width="@dimen/_25mdp"
+            android:layout_height="@dimen/_25mdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_5mdp"
+            android:layout_marginTop="@dimen/_5mdp"
+            android:background="@drawable/bg_circle_cultured"
+            android:backgroundTint="@color/snow"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance_small"
+            android:textColor="@color/gray_900" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/hour"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9font_mdp" />
+
+    </LinearLayout>
+    <!--Minute-->
+    <LinearLayout
+        android:id="@+id/minuteLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/minuteTxt"
+            android:layout_width="@dimen/_25mdp"
+            android:layout_height="@dimen/_25mdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_5mdp"
+            android:layout_marginTop="@dimen/_5mdp"
+            android:background="@drawable/bg_circle_cultured"
+            android:backgroundTint="@color/snow"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance_small"
+            android:textColor="@color/gray_900" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/minute"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9font_mdp" />
+
+    </LinearLayout>
+    <!--Second-->
+    <LinearLayout
+        android:id="@+id/secondLay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/secondTxt"
+            android:layout_width="@dimen/_25mdp"
+            android:layout_height="@dimen/_25mdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="@dimen/_5mdp"
+            android:layout_marginTop="@dimen/_5mdp"
+            android:background="@drawable/bg_circle_cultured"
+            android:backgroundTint="@color/snow"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance_small"
+            android:textColor="@color/gray_900" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="@string/second"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9font_mdp" />
+
+    </LinearLayout>
+
+</LinearLayout>

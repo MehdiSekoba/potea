@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <!--view-->
+    <View
+        android:id="@+id/view_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80mdp"
+        android:layout_marginHorizontal="@dimen/_16mdp"
+        android:layout_marginTop="@dimen/_6mdp"
+        android:background="@drawable/bg_shimmer_big"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--image-->
+    <View
+        android:layout_width="@dimen/_60mdp"
+        android:layout_height="@dimen/_60mdp"
+        android:layout_marginStart="@dimen/_8mdp"
+        android:layout_marginTop="@dimen/_14mdp"
+        android:background="@drawable/bg_shimmer_txt"
+        app:layout_constraintStart_toStartOf="@id/view_card"
+        app:layout_constraintTop_toTopOf="@id/view_card"
+        android:id="@+id/view_image"/>
+    <!--title-->
+    <View
+        android:layout_width="@dimen/_160mdp"
+        android:layout_height="@dimen/_14mdp"
+        app:layout_constraintStart_toEndOf="@id/view_image"
+        app:layout_constraintTop_toTopOf="@id/view_image"
+        android:layout_marginHorizontal="@dimen/_10mdp"
+        android:layout_marginTop="@dimen/_8mdp"
+        android:background="@drawable/bg_shimmer_txt"
+        android:id="@+id/view_title"/>
+    <!--price-->
+    <!--offPrice-->
+    <!--total price-->
+</androidx.constraintlayout.widget.ConstraintLayout>

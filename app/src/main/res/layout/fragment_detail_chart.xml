@@ -1,0 +1,30 @@
+<com.skydoves.androidveil.VeilLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/veilLayoutPrice"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:veilLayout_baseAlpha="0.6"
+    app:veilLayout_dropOff="0.5"
+    app:veilLayout_highlightAlpha="1.0"
+    app:veilLayout_radius="6dp"
+    app:veilLayout_shimmerEnable="true"
+    app:veilLayout_veiled="false">
+
+    <com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
+        android:id="@+id/aa_chart_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.github.aachartmodel.aainfographics.aachartcreator.AAChartView>
+    <!--Empty-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emptyLay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/mines10mdp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/empty" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.skydoves.androidveil.VeilLayout>

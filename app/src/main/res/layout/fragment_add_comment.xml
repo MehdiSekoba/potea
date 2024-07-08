@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_top_rounded_white"
+    android:paddingVertical="@dimen/_15mdp"
+    tools:context=".ui.detail_comments_add.AddCommentFragment">
+    <!--Close-->
+    <ImageView
+        android:id="@+id/closeImg"
+        android:layout_width="@dimen/_20mdp"
+        android:layout_height="@dimen/_20mdp"
+        android:layout_marginStart="@dimen/_15mdp"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_1mdp"
+        android:src="@drawable/close"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/gray" />
+    <!--Title-->
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addNewComment"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/gray_900"
+        app:layout_constraintBottom_toBottomOf="@+id/closeImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--Line-->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_15mdp"
+        android:alpha="0.5"
+        android:background="@color/Magic_Mint"
+        app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/rateSlider"
+        style="@style/MyRangeStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:layout_marginEnd="@dimen/_15mdp"
+        android:stepSize="1"
+        android:valueFrom="1"
+        android:valueTo="5"
+        app:labelBehavior="withinBounds"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/closeImg"
+        app:layout_constraintTop_toBottomOf="@id/line1" />
+
+    <!--Rate title-->
+    <TextView
+        android:id="@+id/commentTitleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_18mdp"
+        android:layout_marginTop="@dimen/_8mdp"
+        android:text="@string/your_Comment"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/gray_900"
+        app:layout_constraintStart_toStartOf="@id/closeImg"
+        app:layout_constraintTop_toBottomOf="@id/rateSlider" />
+
+
+    <!--EditTex-->
+    <EditText
+        android:id="@+id/commentTitleEdt"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:background="@drawable/bg_rounded_white"
+        android:backgroundTint="@color/snow"
+        android:gravity="top"
+        android:hint="@string/write_your_title_comment"
+        android:padding="@dimen/_10mdp"
+        android:textColor="@color/gray_900"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_10font_mdp"
+        app:layout_constraintEnd_toEndOf="@id/rateSlider"
+        app:layout_constraintStart_toStartOf="@id/rateSlider"
+        app:layout_constraintTop_toBottomOf="@id/commentTitleTxt" />
+    <EditText
+        android:id="@+id/commentEdt"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_100mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:background="@drawable/bg_rounded_white"
+        android:backgroundTint="@color/snow"
+        android:gravity="top"
+        android:hint="@string/write_your_comment"
+        android:padding="@dimen/_10mdp"
+        android:textColor="@color/gray_900"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_10font_mdp"
+        app:layout_constraintEnd_toEndOf="@id/rateSlider"
+        app:layout_constraintStart_toStartOf="@id/rateSlider"
+        app:layout_constraintTop_toBottomOf="@id/commentTitleEdt" />
+    <!--submit-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitBtn"
+        style="@style/GreenMaterialButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_marginTop="@dimen/_20mdp"
+        android:enabled="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/sendEmail"
+        android:textColor="@color/button_text_color"
+        app:layout_constraintEnd_toEndOf="@id/commentEdt"
+        app:layout_constraintStart_toStartOf="@id/commentEdt"
+        app:layout_constraintTop_toBottomOf="@id/commentEdt" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

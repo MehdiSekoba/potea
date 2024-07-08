@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.skydoves.androidveil.VeilLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:veilLayout_radius="@dimen/_10mdp"
+    app:veilLayout_shimmerEnable="true"
+    android:id="@+id/veilLayout_cart"
+    tools:context=".ui.cart.CartFragment">
+    <!--Toolbar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_4mdp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+        <!--toolbar-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/toolbar_title"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:elevation="@dimen/_2mdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_12mdp"
+                android:text="@string/cart"
+                android:textAppearance="@style/TextAppearance_Bold"
+                android:textColor="@color/gray_900"
+                app:layout_constraintBottom_toBottomOf="@id/txt_count"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/txt_count"
+                android:layout_marginTop="@dimen/_4mdp"/>
+            <!--count-->
+            <TextView
+                android:id="@+id/txt_count"
+                android:layout_width="@dimen/_32mdp"
+                android:layout_height="@dimen/_32mdp"
+                android:layout_marginEnd="@dimen/_22mdp"
+                android:background="@drawable/circle_bg"
+                android:backgroundTint="@color/UFO_Green"
+                android:gravity="center_horizontal|center_vertical"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="@dimen/_10mdp"
+                tools:text="22" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--line-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1mdp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_title"
+            android:background="@color/Lotion"/>
+        <!--content-->
+        <com.skydoves.androidveil.VeilRecyclerFrameView
+            android:id="@+id/cart_List"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_8mdp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="@dimen/_7mdp"
+            app:layout_constraintBottom_toTopOf="@id/basket_card"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_title"
+            app:veilFrame_isItemWrapContentHeight="true"
+            app:veilFrame_isItemWrapContentWidth="true"
+            app:veilFrame_radius="8dp"
+            app:veilFrame_shimmerEnable="true"
+            app:veilFrame_veiled="false"
+            />
+        <!--basket total -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/basket_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_146mdp"
+            android:background="@drawable/bg_total"
+            android:foregroundTint="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="@dimen/_8mdp">
+            <!--guideline-->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.20" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+            <!--deliver amount-->
+            <TextView
+                android:id="@+id/deliver_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10mdp"
+                android:text="@string/delivery_amount"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+                app:layout_constraintStart_toStartOf="@id/basket_card"
+                app:layout_constraintTop_toTopOf="@id/guideline_horizontal" />
+            <!--deliver price-->
+            <TextView
+                android:id="@+id/deliver_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10mdp"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+                app:layout_constraintTop_toTopOf="@id/deliver_amount"
+                tools:text="20000usd" />
+            <!--line-->
+            <View
+                android:id="@+id/line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_1mdp"
+                android:layout_marginHorizontal="@dimen/_6mdp"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/basket_card"
+                app:layout_constraintStart_toStartOf="@id/basket_card"
+                app:layout_constraintTop_toBottomOf="@id/deliver_amount" />
+            <!--total amount-->
+            <TextView
+                android:id="@+id/total_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8mdp"
+                android:text="@string/total_amount"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:layout_constraintEnd_toEndOf="@id/deliver_amount"
+                app:layout_constraintStart_toStartOf="@id/deliver_amount"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_10mdp"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:layout_constraintStart_toEndOf="@id/guideline_vertical"
+                app:layout_constraintTop_toTopOf="@id/total_amount"
+                tools:text="20000usd" />
+            <!--make payment-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40mdp"
+                android:layout_marginHorizontal="@dimen/_14mdp"
+                android:layout_marginTop="@dimen/_6mdp"
+                android:background="@drawable/bg_rounded_white"
+                android:backgroundTint="@color/snow"
+                app:layout_constraintEnd_toEndOf="@id/basket_card"
+                app:layout_constraintStart_toStartOf="@id/basket_card"
+                app:layout_constraintTop_toBottomOf="@id/total_amount">
+                <!--text-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_18mdp"
+                    android:paddingVertical="@dimen/_6mdp"
+                    android:text="@string/make_payment"
+                    android:textAppearance="@style/TextAppearance_Bold"
+                    android:textColor="@color/gray_900"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--bottom pay-->
+                <ImageView
+                    android:id="@+id/make_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_10mdp"
+                    android:contentDescription="@string/app_name"
+                    android:paddingVertical="@dimen/_6mdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/arrow_pay"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Empty-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/emptyLay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_title">
+
+            <include layout="@layout/empty"
+                android:id="@+id/empty"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.skydoves.androidveil.VeilLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ColoredShadowDark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Back Button -->
+    <ImageView
+        android:id="@+id/imgBack"
+        android:layout_width="@dimen/_32mdp"
+        android:layout_height="@dimen/_32mdp"
+        android:layout_marginStart="@dimen/_14mdp"
+        android:layout_marginTop="@dimen/_26mdp"
+        android:background="@drawable/bg_circle_white"
+        android:contentDescription="@string/app_name"
+        android:elevation="@dimen/_12mdp"
+        android:padding="@dimen/_6mdp"
+        android:rotation="180"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/UFO_Green" />
+    <!--favorite-->
+    <ImageView
+        android:id="@+id/img_favorite"
+        android:layout_width="@dimen/_32mdp"
+        android:layout_height="@dimen/_32mdp"
+        android:layout_marginEnd="@dimen/_14mdp"
+        android:background="@drawable/bg_circle_white"
+        android:contentDescription="@string/app_name"
+        android:elevation="@dimen/_12mdp"
+        android:padding="@dimen/_6mdp"
+        android:src="@drawable/un_favorite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgBack"
+        app:tint="@color/UFO_Green" />
+    <!--loading-->
+    <ProgressBar
+        android:id="@+id/favLoading"
+        style="@style/GreenProgressbar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/img_favorite"
+        app:layout_constraintEnd_toEndOf="@id/img_favorite"
+        app:layout_constraintStart_toStartOf="@id/img_favorite"
+        app:layout_constraintTop_toTopOf="@id/img_favorite"
+        android:visibility="gone"/>
+    <!--single image-->
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:id="@+id/singleImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_280mdp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+    <!--list image-->
+    <com.skydoves.androidveil.VeilRecyclerFrameView
+        android:id="@+id/imageRecyclerView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:veilFrame_isItemWrapContentHeight="true"
+        app:veilFrame_isItemWrapContentWidth="true"
+        app:veilFrame_radius="8dp"
+        app:veilFrame_shimmerEnable="true"
+        app:veilFrame_veiled="false"
+        android:layout_marginTop="@dimen/_6mdp"
+        android:layout_marginBottom="@dimen/_6mdp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toBottomOf="@id/singleImage"
+        app:layout_constraintStart_toStartOf="@id/imgBack"
+        app:layout_constraintTop_toBottomOf="@id/imgBack"/>
+
+    <!--Title-->
+    <TextView
+        android:id="@+id/productTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_6mdp"
+        android:layout_marginTop="@dimen/_18mdp"
+        android:lineSpacingExtra="@dimen/_3mdp"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/gray_900"
+        app:layout_constraintEnd_toEndOf="@id/txt_rate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/singleImage" />
+    <!--rate-->
+    <TextView
+        android:id="@+id/txt_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_14mdp"
+        android:background="@drawable/bg_circle_white"
+        android:drawablePadding="@dimen/_2mdp"
+        android:padding="@dimen/_8mdp"
+        android:shadowRadius="4.0"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/gray_900"
+        app:drawableStartCompat="@drawable/star"
+        app:drawableTint="@color/UFO_Green"
+        app:layout_constraintBottom_toBottomOf="@id/singleImage"
+        app:layout_constraintEnd_toEndOf="@id/singleImage"
+        app:layout_constraintTop_toBottomOf="@id/singleImage"
+        tools:text="4.5" />
+    <!--Info-->
+    <kr.co.prnd.readmore.ReadMoreTextView
+        android:id="@+id/productInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="@dimen/_3mdp"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/gray_900"
+        app:layout_constraintEnd_toEndOf="@id/productTitle"
+        app:layout_constraintStart_toStartOf="@id/productTitle"
+        app:layout_constraintTop_toBottomOf="@id/productTitle"
+        app:readMoreColor="@color/UFO_Green"
+        app:readMoreMaxLine="4"
+        app:readMoreText="@string/showMore"
+        tools:targetApi="O" />
+    <!--Line-->
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="@dimen/_15mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:alpha="0.5"
+        android:background="@color/Magic_Mint"
+        app:layout_constraintTop_toBottomOf="@id/productInfo" />
+</androidx.constraintlayout.widget.ConstraintLayout>

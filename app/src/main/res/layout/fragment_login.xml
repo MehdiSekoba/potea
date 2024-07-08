@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginFragment">
+    <!--back-->
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_width="@dimen/_26mdp"
+        android:layout_height="@dimen/_26mdp"
+        android:layout_marginHorizontal="@dimen/_14mdp"
+        android:layout_marginTop="@dimen/_26mdp"
+        android:contentDescription="@string/app_name"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        android:src="@drawable/arrow_right"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/gray_900" />
+    <!--title-->
+    <TextView
+        android:id="@+id/txt_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_32mdp"
+        android:layout_marginTop="@dimen/_80mdp"
+        android:gravity="center_vertical"
+        android:text="@string/otea"
+        android:textColor="@color/gray_900"
+        android:textSize="@dimen/_24font_mdp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:drawableStart="@drawable/ic_logo" />
+    <!--title login-->
+    <TextView
+        android:id="@+id/txt_suggest_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_18mdp"
+        android:layout_marginTop="@dimen/_12mdp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/login_to_your_account"
+        android:textAppearance="@style/TextAppearance_medium"
+        android:textColor="@color/gray_900"
+        app:layout_constraintTop_toBottomOf="@id/txt_logo" />
+    <!--email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInpLay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20mdp"
+        android:layout_marginTop="@dimen/_14mdp"
+        android:hint="@string/emailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_suggest_login">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/gray_900"
+            android:textSize="@dimen/_12font_mdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passInpLay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_20mdp"
+        android:layout_marginTop="@dimen/_14mdp"
+        android:hint="@string/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailInpLay"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/lock_circle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passEdt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword|textPassword|textCapWords"
+            android:maxLines="1"
+            android:textColor="@color/gray_900"
+            android:textSize="@dimen/_12font_mdp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <!--remember-->
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/check_remember"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/mines16mdp"
+        app:buttonTint="@color/UFO_Green"
+        app:layout_constraintEnd_toEndOf="@id/passInpLay"
+        app:layout_constraintStart_toStartOf="@id/passInpLay"
+        app:layout_constraintTop_toBottomOf="@id/passInpLay" />
+    <!--remember password-->
+    <TextView
+        android:id="@+id/txt_remember_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remember_me"
+        app:layout_constraintBottom_toBottomOf="@id/check_remember"
+        app:layout_constraintStart_toEndOf="@id/check_remember"
+        app:layout_constraintTop_toTopOf="@id/check_remember" />
+    <!--sign in-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/signBtn"
+        style="@style/GreenMaterialButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40mdp"
+        android:layout_marginTop="@dimen/_20mdp"
+        android:enabled="false"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/sendEmail"
+        android:textColor="@color/button_text_color"
+        app:layout_constraintEnd_toEndOf="@id/emailInpLay"
+        app:layout_constraintStart_toStartOf="@id/emailInpLay"
+        app:layout_constraintTop_toBottomOf="@id/check_remember" />
+    <!--forget-->
+    <TextView
+        android:id="@+id/forgot_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12mdp"
+        android:text="@string/forgot_the_password"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/UFO_Green"
+        app:layout_constraintEnd_toEndOf="@id/emailInpLay"
+        app:layout_constraintStart_toStartOf="@id/emailInpLay"
+        app:layout_constraintTop_toBottomOf="@id/signBtn" />
+    <!--or -->
+    <TextView
+        android:id="@+id/txt_with_continue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10mdp"
+        android:layout_marginTop="@dimen/_10mdp"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/or_continue_with"
+        android:textAppearance="@style/TextAppearance_medium"
+        app:drawableEndCompat="@drawable/ic_line"
+        app:drawableStartCompat="@drawable/ic_line"
+        app:drawableTint="@color/shimmer"
+        app:layout_constraintEnd_toEndOf="@id/passInpLay"
+        app:layout_constraintStart_toStartOf="@id/signBtn"
+        app:layout_constraintTop_toBottomOf="@id/forgot_pass" />
+    <!--login other-->
+    <ImageView
+        android:id="@+id/img_google"
+        android:layout_width="@dimen/_26mdp"
+        android:layout_height="@dimen/_26mdp"
+        android:src="@drawable/ic_google"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"/>
+    <ImageView
+        android:id="@+id/img_face"
+        android:layout_width="@dimen/_26mdp"
+        android:layout_height="@dimen/_26mdp"
+        android:src="@drawable/ic_facebook"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"/>
+    <ImageView
+        android:id="@+id/img_twitter"
+        android:layout_width="@dimen/_26mdp"
+        android:layout_height="@dimen/_26mdp"
+        android:src="@drawable/ic_twitter"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"/>
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_with_continue"
+        android:layout_marginTop="@dimen/_8mdp"
+        app:constraint_referenced_ids="img_google,img_face,img_twitter"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

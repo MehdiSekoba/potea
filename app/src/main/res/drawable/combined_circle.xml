@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="48dp"
+        android:height="48dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:drawable="@drawable/outer_circle" />
+
+    <item
+        android:width="30dp"
+        android:height="30dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:drawable="@drawable/inner_circle" />
+</layer-list>

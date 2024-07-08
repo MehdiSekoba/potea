@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!--cardview-->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/feedbackCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_8mdp"
+        app:cardElevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_16mdp"
+            >
+            <!--title-->
+            <TextView
+                android:id="@+id/feedbackTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/give_us_feedback"
+                android:textAppearance="@style/TextAppearance_Bold"
+                android:textColor="@color/gray_900"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--close-->
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="@dimen/_24mdp"
+                android:layout_height="@dimen/_24mdp"
+                android:layout_margin="@dimen/_4mdp"
+                android:background="@drawable/circle_bg"
+                android:backgroundTint="@color/snow"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_6mdp"
+                android:src="@drawable/close"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/gray_200" />
+            <!--emoji-->
+            <ImageView
+                android:id="@+id/five_star"
+                android:layout_width="@dimen/_40mdp"
+                android:layout_height="@dimen/_40mdp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/five_star" />
+
+            <ImageView
+                android:id="@+id/three_star"
+                android:layout_width="@dimen/_40mdp"
+                android:layout_height="@dimen/_40mdp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/three_star" />
+
+            <ImageView
+                android:id="@+id/one_star"
+                android:layout_width="@dimen/_40mdp"
+                android:layout_height="@dimen/_40mdp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                android:src="@drawable/one_star" />
+            <!--flow page-->
+            <androidx.constraintlayout.helper.widget.Flow
+                android:id="@+id/emoji_flow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_22mdp"
+                app:constraint_referenced_ids="five_star,three_star,one_star"
+                app:flow_horizontalGap="@dimen/_8mdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/feedbackTitle" />
+            <!--message-->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.App.TextInputLayout"
+                android:id="@+id/messageInpLay"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100mdp"
+                android:layout_marginHorizontal="@dimen/_20mdp"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:hint="@string/tell_us_more"
+                app:boxStrokeColor="@color/Blue"
+                app:counterMaxLength="300"
+                app:startIconDrawable="@null"
+                app:layout_constraintBottom_toTopOf="@id/sendFeedbackBtn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emoji_flow">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/messageEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:maxLines="5"
+                    android:minLines="2"
+                    android:textColor="@color/gray_900"
+                    android:gravity="start|top|center_horizontal"
+                    android:textAppearance="@style/TextAppearance_medium" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+            <!--send-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sendFeedbackBtn"
+                style="@style/GreenMaterialButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10mdp"
+                android:enabled="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="@string/send"
+                android:textColor="@color/button_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/messageInpLay" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

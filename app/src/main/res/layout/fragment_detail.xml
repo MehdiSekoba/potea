@@ -1,0 +1,69 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/veilLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintTop_toTopOf="parent">
+    <!--Container-->
+    <!--Scroll-->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/detailScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="@dimen/_90mdp"
+        android:scrollbarSize="0dp">
+        <!--shimmer-->
+        <com.skydoves.androidveil.VeilLayout
+            android:id="@+id/detail_veilLayout_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:veilLayout_radius="@dimen/_14mdp"
+            app:veilLayout_shimmerEnable="true"
+            app:veilLayout_veiled="false">
+            <!--content-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!--Header-->
+                <include
+                    android:id="@+id/detailHeaderLay"
+                    layout="@layout/detail_header" />
+
+                <!--Discount-->
+                <include
+                    android:id="@+id/detailTimerLay"
+                    layout="@layout/detail_timer" />
+                <!--Pager-->
+                <include
+                    android:id="@+id/detailPagerLay"
+                    layout="@layout/detail_pager"
+                    />
+            </LinearLayout>
+        </com.skydoves.androidveil.VeilLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.skydoves.androidveil.VeilLayout
+        android:id="@+id/veilLayout_cart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_20mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:veilLayout_radius="@dimen/_14mdp"
+        app:veilLayout_shimmerEnable="true"
+        app:veilLayout_veiled="false">
+        <!--Bottom-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/detailBottomLay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/detailBottom"
+                layout="@layout/detail_price_cart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.skydoves.androidveil.VeilLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

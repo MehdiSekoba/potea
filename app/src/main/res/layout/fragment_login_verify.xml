@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_Green"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+    <!--Title-->
+    <TextView
+        android:id="@+id/titleTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_46mdp"
+        android:text="@string/otp_verification"
+        android:textAppearance="@style/TextAppearance_Bold"
+        android:textColor="@color/darkTurquoise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--top-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sing_up_lay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_34mdp"
+        android:background="@drawable/bg_top_rounded_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTxt">
+        <!--Info-->
+        <TextView
+            android:id="@+id/txt_mail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_26mdp"
+            android:maxLines="2"
+            android:layout_marginHorizontal="@dimen/_12mdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAppearance="@style/TextAppearance_medium"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+        <!--Animation-->
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180mdp"
+            android:layout_marginTop="@dimen/_10mdp"
+            app:layout_constraintTop_toBottomOf="@id/txt_mail"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="false"
+            app:lottie_rawRes="@raw/otp_email" />
+        <!--pin-->
+        <com.goodiebag.pinview.Pinview
+            android:id="@+id/pinView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15mdp"
+            app:forceKeyboard="false"
+            app:hint="0"
+            app:inputType="number"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/animationView"
+            app:pinBackground="@drawable/bg_otp"
+            app:pinHeight="@dimen/_35mdp"
+            app:pinLength="4"
+            app:pinWidth="@dimen/_35mdp"
+            app:textSize="@dimen/_6font_mdp" />
+        <!--timer-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/timerLay"
+            android:layout_width="@dimen/_68mdp"
+            android:layout_height="@dimen/_68mdp"
+            android:layout_margin="@dimen/_20mdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pinView">
+            <!--Text-->
+            <TextView
+                android:id="@+id/timerTxt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:textAppearance="@style/TextAppearance_medium"
+                android:textColor="@color/gray_900"
+                app:drawableTint="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="59s" />
+            <!--Send code-->
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/timerProgress"
+                style="@style/Widget.App.CircularProgressIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="60"
+                android:progress="60" />
+            <!--Send code-->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/sendAgainBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:padding="@dimen/_8mdp"
+                android:stateListAnimator="@null"
+                android:text="@string/sendAgainVerifyCode"
+                android:textAppearance="@style/TextAppearance_small"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:backgroundTint="@color/UFO_Green"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

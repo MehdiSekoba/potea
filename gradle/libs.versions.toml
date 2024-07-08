@@ -1,0 +1,96 @@
+[versions]
+aachartcoreKotlin = "7.2.1"
+agp = "8.4.1"
+androidveil = "1.1.4"
+dotsindicator = "5.0"
+formatWatcher = "1.0.1"
+kenburnsview = "1.0.7"
+kotlin = "2.0.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+appcompat = "1.7.0"
+chucker = "4.0.0"
+material = "1.12.0"
+activity = "1.9.0"
+constraintlayout = "2.1.4"
+datastorePreferences = "1.1.1"
+kspversion = "2.0.0-1.0.21"
+hiltversion = "2.51.1"
+multisearchview = "1.4"
+permissionx = "1.7.1"
+readmoreTextview = "1.0.0"
+safeargs = "2.7.7"
+retrofit = "2.9.0"
+okhttp = "4.12.0"
+interceptor = "4.12.0"
+lifecycle = "2.8.1"
+coroutines = "1.8.0"
+google_gson = "2.10.1"
+coil = "2.6.0"
+calligraphy = "3.1.1"
+swiperefreshlayout = "1.1.0"
+ticketview = "1.1.2"
+viewpump = "2.0.3"
+lottie = "6.4.0"
+dynamicsizes = "1.0"
+pinview = "v1.5"
+ssimagepicker = "2.1"
+places = "3.5.0"
+coreAnimation = "1.0.0"
+
+[libraries]
+aachartcore-kotlin = { module = "com.github.AAChartModel:AAChartCore-Kotlin", version.ref = "aachartcoreKotlin" }
+androidveil = { group = "com.github.skydoves",name="androidveil", version.ref = "androidveil" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+dotsindicator = { group = "com.tbuonomo", name = "dotsindicator", version.ref = "dotsindicator" }
+format-watcher = { module = "io.github.ihermandev:format-watcher", version.ref = "formatWatcher" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+chucker = { group = "com.github.chuckerteam.chucker", name = "library", version.ref = "chucker" }
+chucker-no-op = { group = "com.github.chuckerteam.chucker", name = "library-no-op", version.ref = "chucker" }
+kenburnsview = { module = "com.flaviofaria:kenburnsview", version.ref = "kenburnsview" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastorePreferences" }
+hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltversion" }
+hiltcompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltversion" }
+multisearchview = { module = "com.github.kojofosu:MultiSearchView", version.ref = "multisearchview" }
+navigation_fragment = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "safeargs" }
+navigation_ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "safeargs" }
+permissionx = { group = "com.guolindev.permissionx", name = "permissionx", version.ref = "permissionx" }
+readmore-textview = { group = "kr.co.prnd",name="readmore-textview", version.ref = "readmoreTextview" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter_gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "interceptor" }
+coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+lifecycle_viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle_runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle_livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+google_gson = { group = "com.google.code.gson", name = "gson", version.ref = "google_gson" }
+coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+calligraphy = { group = "io.github.inflationx", name = "calligraphy3", version.ref = "calligraphy" }
+ticketview = { module = "com.vipulasri:ticketview", version.ref = "ticketview" }
+viewpump = { group = "io.github.inflationx", name = "viewpump", version.ref = "viewpump" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+dynamicsizes = { group = "com.github.MrNouri", name = "DynamicSizes", version.ref = "dynamicsizes" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+pinview = { group = "com.github.GoodieBag", name = "Pinview", version.ref = "pinview" }
+ssimagepicker = { group = "com.github.SimformSolutionsPvtLtd", name = "SSImagePicker", version.ref = "ssimagepicker" }
+places = { group = "com.google.android.libraries.places", name = "places", version.ref = "places" }
+androidx-core-animation = { group = "androidx.core", name = "core-animation", version.ref = "coreAnimation" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp_plugin = { id = "com.google.devtools.ksp", version.ref = "kspversion" }
+hilt_plugin = { id = "com.google.dagger.hilt.android", version.ref = "hiltversion" }
+safeargs_plugin = { id = "androidx.navigation.safeargs", version.ref = "safeargs" }
+kotlin-parcelize = { id = "org.jetbrains.kotlin.plugin.parcelize", version.ref = "kotlin" }
+

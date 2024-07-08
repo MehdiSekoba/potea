@@ -1,0 +1,8 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke android:width="@dimen/_1mdp" android:color="@color/Magic_Mint" />
+    <padding android:left="@dimen/_4mdp" android:top="@dimen/_4mdp"
+        android:right="@dimen/_4mdp" android:bottom="@dimen/_4mdp" />
+    <corners android:radius="@dimen/_12mdp" />
+    <solid android:color="@color/white"/>
+
+</shape>

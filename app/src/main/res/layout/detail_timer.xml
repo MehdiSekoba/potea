@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_7mdp"
+    android:outlineAmbientShadowColor="@color/red_400"
+    android:outlineSpotShadowColor="@color/red_400"
+    app:cardBackgroundColor="@color/red_400"
+    app:cardCornerRadius="@dimen/_10mdp"
+    app:cardElevation="@dimen/_8mdp"
+    tools:targetApi="p"
+    app:strokeWidth="0dp"
+    android:layout_marginHorizontal="@dimen/_10mdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/priceDiscountLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5mdp">
+        <!--Title-->
+        <TextView
+            android:id="@+id/discountTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15mdp"
+            android:text="@string/amazing_offers"
+            android:textColor="@color/whiteSmoke"
+            android:textAppearance="@style/TextAppearance_medium"
+            app:layout_constraintBottom_toBottomOf="@id/discountTimerContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/discountTimerContainer" />
+        <!--Timer-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/discountTimerContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5mdp"
+            app:layout_constraintStart_toEndOf="@id/discountTitle"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <include
+                android:id="@+id/timerLay"
+                layout="@layout/discount_timer" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

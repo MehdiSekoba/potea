@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_128mdp"
+    android:layout_height="@dimen/_164mdp"
+    android:layout_margin="@dimen/_4mdp"
+    android:background="@color/whiteSmoke">
+    <!--image-->
+    <View
+        android:id="@+id/view_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100mdp"
+        android:background="@color/shimmer"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--title-->
+    <View
+        android:id="@+id/view_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_12mdp"
+        android:layout_marginTop="@dimen/_4mdp"
+        android:background="@drawable/bg_shimmer_txt"
+        app:layout_constraintTop_toBottomOf="@id/view_img" />
+    <!--cart-->
+    <View
+        android:id="@+id/view_cart"
+        android:layout_width="@dimen/_36mdp"
+        android:layout_height="@dimen/_36mdp"
+        android:layout_marginHorizontal="@dimen/_2mdp"
+        android:background="@drawable/bg_shimmer_txt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_title" />
+    <!--price-->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_12mdp"
+        app:layout_constraintStart_toEndOf="@id/view_cart"
+        app:layout_constraintTop_toTopOf="@id/view_cart"
+        app:layout_constraintBottom_toBottomOf="@id/view_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_shimmer_txt"
+        android:layout_marginHorizontal="@dimen/_4mdp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

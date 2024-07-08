@@ -1,0 +1,43 @@
+<resources>
+    <color name="Cadmium_Green">#006D39</color>
+    <color name="white">#FFFFFF</color>
+    <color name="UFO_Green">#25C36E</color>
+    <color name="Dark_Green">#002710</color>
+    <color name="Deep_Moss_Green">#356945</color>
+    <color name="Magic_Mint">#BBF4C6</color>
+    <color name="Cal_Poly_Pomona_Green">#205432</color>
+    <color name="Carnelian">#BA1A1A</color>
+    <color name="red_400">#f23248</color>
+    <color name="Pale_Pink">#FFDAD6</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="light_color">@android:color/white</color>
+    <color name="text_color">#484848</color>
+    <color name="gray_900">#212121</color>
+    <color name="Light_Grey">#F5F5F5</color>
+    <color name="Dark_Grey">#333333</color>
+    <color name="Blue">#007BFF</color>
+    <color name="Green">#28A745</color>
+    <color name="light_Green">#E0F8E0</color>
+    <color name="darkTurquoise">#008f9b</color>
+    <color name="mediumTurquoise">#39c2d2</color>
+    <color name="aliceBlue">#f3f5fc</color>
+    <color name="whiteSmoke">#f6f6f6</color>
+    <color name="seaSerpent">#4ac0ce</color>
+    <color name="lightTurquoise">#05d1c5</color>
+    <color name="Lotion">#fafafa</color>
+    <color name="Charcoal_Gray">#34495e</color>
+    <color name="gray_200">#A49E9E9E</color>
+    <color name="shimmer">#D3D3D3</color>
+    <color name="dark_gunmetal">#1F1D36</color>
+    <color name="dark_gunmetal_alpha">#801F1D36</color>
+    <color name="Royal_Red">#cf0062</color>
+    <color name="gray_500">#f2f2f2</color>
+    <color name="Tennessee_Orange">#F57C00</color>
+    <color name="Vivid_Gamboge">#FF9800 </color>
+    <color name="gray">#737980</color>
+    <color name="eerieBlack">#15191e</color>
+    <color name="snow">#F7F5F5</color>
+    <color name="backShadow">#28000000</color>
+    <color name="Water">#CCF4F6F6</color>
+
+</resources>
