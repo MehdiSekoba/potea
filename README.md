@@ -81,8 +81,9 @@ Edit Profile Screen            | Splash Screen
   - This project follows the MVVM (Model-View-ViewModel) architecture pattern for a clear separation of concerns and better testability.
  
   - **Video
+    
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/lAsvaVm-YwM/0.jpg)](https://www.youtube.com/embed/lAsvaVm-YwM?si=Dz1uh1FyMHOgSZ8x)
-**
+
 
 ## Support
 
