@@ -81,6 +81,7 @@ Edit Profile Screen            | Splash Screen
   - This project follows the MVVM (Model-View-ViewModel) architecture pattern for a clear separation of concerns and better testability.
  
   - **Video
+  - <iframe width="560" height="315" src="https://www.youtube.com/embed/lAsvaVm-YwM?si=fBnbzgnhf4NzhnJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ## Support
 
 This project includes many more capabilities. Please support the project by giving it a star and forking it.
